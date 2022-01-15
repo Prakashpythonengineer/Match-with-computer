@@ -1,0 +1,215 @@
+#include<stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
+#include <conio.h>
+void main()
+{
+    printf("**Welcome to IPL Tournament**\n");
+    printf("\n");
+    printf("This is a Human Vs Computer match");
+    printf("\n\n");
+    int toss1,toss2,call,l=1,u=2;
+    printf("Call for Toss 'Enter 1 for 'Tails', 2 for 'Heads'");
+    scanf("%d",&toss1);
+    printf("\n\n");
+    srand(time(NULL));
+    toss2=(rand()%(u-l+1))+l;
+    if (toss1==toss2)
+    {
+        printf("You have won the toss 'Press 1 for bating, Press 2 for bowling'");
+        scanf("%d",&call);
+        if (call==1)
+        {
+            printf("You are now going to bat!!");
+        }
+        else if (call==2)
+        {
+            printf("you are now going to bowl!!");
+        }
+    }
+    else if (toss1!=toss2)
+    {
+        printf("You have lost the toss and you have to Bat now!!");
+    }
+    printf("\n\n");
+    int overs=5;
+    printf("Match is going to Start in");
+    printf("\n\n");
+    sleep(1);
+    printf("3");
+    printf("\n\n");
+    sleep(1);
+    printf("2");
+    printf("\n\n");
+    sleep(1);
+    printf("1");
+    printf("\n\n");
+    sleep(1);
+    printf("Let's Play!!");
+    printf("\n\n");
+    int i,j,lowerball=0,highball=6,totalhuman=0,totalcomputer=0;
+    int run1=0,ball=0;
+    int bowl=0,runcom=0;
+    if (toss1==toss2 & call==1)
+    {
+        for(i=1;i<=30;i++)
+        {
+            ball=(rand()%(highball-lowerball+1))+lowerball;
+            printf("Enter the run between 0 to 6:");
+            scanf("%d",&run1);
+            if (ball==run1)
+            {
+                printf("You are Out!!");
+                printf("\n\n");
+                printf("Your total run is %d",totalhuman);
+                printf("\n\n");
+                printf("Now it's time to Bowl!!");
+                break;
+            }
+            else
+            {
+                totalhuman+=run1;
+            }
+        }
+        for(j=1;j<=30;j++)
+        {
+            bowl=(rand()%(highball-lowerball+1))+lowerball;
+            printf("Enter the run between 0 to 6:");
+            scanf("%d",&runcom);
+            if (bowl==runcom)
+            {
+                printf("Computer is Out!!");
+                printf("\n\n");
+                printf("Computer's total run is %d\n\n",totalcomputer);
+                printf("\n\n");
+                printf("Match Over !!");
+                break;
+            }
+            else
+            {
+                totalcomputer+=run1;
+            }
+        }
+        
+        if (totalcomputer==totalhuman)
+        {
+            printf("The match Draw!!");
+        }
+        else if (totalhuman>totalcomputer)
+        {
+            printf("Horray You Won the Match!!!!");
+        }
+        else
+        {
+            printf("OHHH Computer Won the match 'BETTER LUCK NEXT TIME'");
+        }
+    }
+/*finished*/
+    else if (toss1==toss2 & call==2)
+    {
+        for(i=1;i<=30;i++)
+        {
+            runcom=(rand()%(highball-lowerball+1))+lowerball;
+            printf("Enter the run between 0 to 6 to bowl:");
+            scanf("%d",&bowl);
+            if (ball==runcom)
+            {
+                printf("Computer is Out!!");
+                printf("\n\n");
+                printf("Computer's total run is %d",totalcomputer);
+                break;
+            }
+            else
+            {
+                totalcomputer+=runcom;
+            }
+        }
+        for(i=1;i<=30;i++)
+        {
+            ball=(rand()%(highball-lowerball+1))+lowerball;
+            printf("Enter the run between 0 to 6:");
+            scanf("%d",&run1);
+            if (ball==run1)
+            {
+                printf("You are Out!!");
+                printf("\n\n");
+                printf("Your total run is %d",totalhuman);
+                printf("\n\n");
+                printf("Now it's time to Bowl!!");
+                break;
+            }
+            else
+            {
+                totalhuman+=run1;
+            }
+        }
+        if (totalcomputer==totalhuman)
+        {
+            printf("The match Draw!!");
+        }
+        else if (totalhuman>totalcomputer)
+        {
+            printf("Horray You Won the Match!!!!");
+        }
+        else
+        {
+            printf("OHHH Computer Won the match 'BETTER LUCK NEXT TIME'");
+        }
+    }
+/*finished*/
+    else if (toss1!=toss2)
+    {
+        for(i=1;i<=30;i++)
+        {
+            ball=(rand()%(highball-lowerball+1))+lowerball;
+            printf("Enter the run between 0 to 6:");
+            scanf("%d",&run1);
+            if (ball==run1)
+            {
+                printf("You are Out!!");
+                printf("\n\n");
+                printf("Your total run is %d",totalhuman);
+                printf("\n\n");
+                printf("Now it's time to Bowl!!\n\n");
+                break;
+            }
+            else
+            {
+                totalhuman+=run1;
+            }
+        }
+        for(j=1;j<=30;j++)
+        {
+            bowl=(rand()%(highball-lowerball+1))+lowerball;
+            printf("Enter the run between 0 to 6:");
+            scanf("%d",&runcom);
+            if (bowl==runcom)
+            {
+                printf("Computer is Out!!");
+                printf("\n\n");
+                printf("Computer's total run is %d\n\n",totalcomputer);
+                printf("\n\n");
+                printf("Match Over !!");
+                break;
+            }
+            else
+            {
+                totalcomputer+=run1;
+            }
+        }
+        if (totalcomputer==totalhuman)
+        {
+            printf("The match Draw!!");
+        }
+        else if (totalhuman>totalcomputer)
+        {
+            printf("Horray You Won the Match!!!!");
+        }
+        else
+        {
+            printf("OHHH Computer Won the match 'BETTER LUCK NEXT TIME'");
+        }
+    }
+}
+/*Working Completely*/
